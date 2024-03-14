@@ -1,8 +1,9 @@
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff; 
+    background-color: #fafafa; 
     padding: 10px 20px;
     height: 80px;
     border-bottom: none; 
@@ -17,9 +18,9 @@
   
   .nav-item {
     margin: 0 15px;
-    color: #444444;
+    color: #1c1c1c;
     text-decoration: none;
-    font-family: 'GDSherpaVariable', sans-serif;
+    /* font-family: 'GDSherpaVariable', sans-serif; */
     font-weight: bold;
     transition: color 0.3s;
   }
