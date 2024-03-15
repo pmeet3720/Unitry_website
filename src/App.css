@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+.cta-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #333;
+}

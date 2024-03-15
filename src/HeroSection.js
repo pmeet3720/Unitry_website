@@ -32,11 +32,10 @@ const HeroSection = () => {
           <div className="stat-item">
             <CountUp end={100} duration={10} />
             <br></br>
-            <span className="stat-text">+ schools partnered</span>
+            <span className="stat-text">schools partnered</span>
           </div>
         </VisibilitySensor>
       </div>
-      <button className="cta-button">Learn More</button>
     </section>
   );
 };
