@@ -1,16 +1,15 @@
 .categories-section {
-    padding: 50px 20px;
-    background-color: #fafafa;
-  }
-  
-  .categories-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: stretch;
-  }
-  
-  .categories-section {
-    scroll-behavior: smooth;
-  }
-  
+  padding: 50px 20px;
+  background-color: #fafafa;
+}
+
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.categories-section {
+  scroll-behavior: smooth;
+}

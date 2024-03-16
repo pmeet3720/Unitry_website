@@ -26,7 +26,8 @@
   }
   
   .nav-item:hover {
-    color: #5a5a5a; 
+    cursor: pointer; 
+    color: black; 
   }
   
   .nav-right {

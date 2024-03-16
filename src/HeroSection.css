@@ -1,27 +1,8 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden; /* Prevents horizontal scroll */
-  }
-
-  .grid-background {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translateX(-50%) translateY(-700px); /* Centers the grid and moves it up */
-    background-image: url('./images/Chef.png'); /* Path to your grid image */
-    background-repeat: repeat;
-    background-size: auto;
-    z-index: 5; /* Lower than hero content */
-    opacity: 0.5; /* Makes the grid less prominent */
-  }  
 /* HeroSection.css */
 .hero {
     text-align: center;
     padding: 50px;
+    padding-bottom: 15px;
     color: #1c1c1c; /* Adjust if needed for better contrast */
     background-color: #fafafa; /* A neutral background for the entire section */
   }
@@ -35,7 +16,7 @@ body, html {
   .hero h2 {
     margin-bottom: 2em;
     font-size: 1.2rem;
-    color: #1c1c1c;
+    color: #e3000f;
   }
   
   .statistics {
@@ -46,7 +27,7 @@ body, html {
     margin: 30px auto; /* Increase margin for more breathing room */
     padding: 30px; /* More padding for a pronounced effect */
     border-radius: 25px; /* Smooth, rounded corners */
-    background: linear-gradient(135deg, #e74e4e, #ea3232); /* A subtle red gradient */
+    background: linear-gradient(135deg, #fafafa , #fafafa); /* A subtle red gradient */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow for depth */
     color: #1c1c1c; /* Dark color for text to stand out */
     font-family: 'GDSherpaVariable', sans-serif; /* Consistent font */

@@ -16,21 +16,21 @@ const HeroSection = () => {
       <div className="statistics">
         <VisibilitySensor onChange={onVisibilityChange} offset={{ top: 10 }} delayedCall>
           <div className="stat-item">
-            <CountUp end={17} duration={10} />
+            <CountUp end={17} duration={25} />
             <br></br>
-            <span className="stat-text">More than years in industry</span>
+            <span className="stat-text"> More than years in industry </span>
           </div>
         </VisibilitySensor>
         <VisibilitySensor onChange={onVisibilityChange} offset={{ top: 10 }} delayedCall>
           <div className="stat-item">
-            <CountUp end={255000} duration={10} />
+            <CountUp end={255000} duration={25} />
             <br></br>
             <span className="stat-text">Coustmer Served and Counting</span>
           </div>
         </VisibilitySensor>
         <VisibilitySensor onChange={onVisibilityChange} offset={{ top: 10 }} delayedCall>
           <div className="stat-item">
-            <CountUp end={100} duration={10} />
+            <CountUp end={100} duration={25} />
             <br></br>
             <span className="stat-text">schools partnered</span>
           </div>
