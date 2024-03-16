@@ -1,0 +1,67 @@
+/* ContactForm.css */
+.contact-form-section {
+    background-color: #fafafa; /* Neutral background */
+    padding: 60px 15px; /* More padding at the top and bottom */
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 800px; /* Adjust width for a 4:3 ratio */
+    margin: 0 auto; /* Center the container */
+    padding: 40px; /* Increase padding for a taller form */
+    background-color: #fff; /* White background for the container */
+    box-shadow: 0 6px 12px rgba(227, 0, 15, 0.2); /* Red shadow for consistency */
+    border-radius: 15px; /* Rounded corners */
+  }
+  
+  .contact-form-section h2 {
+    color: #333; /* Black text for heading */
+    margin-bottom: 30px; /* More space below the heading */
+    font-size: 2.5rem; /* Large font size for heading */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input,
+  textarea {
+    padding: 15px; /* Comfortable padding inside the fields */
+    margin-bottom: 20px; /* Space between fields */
+    border: 1px solid #ddd; /* Light grey border for inputs */
+    border-radius: 5px; /* Slightly rounded corners for the inputs */
+    font-size: 1rem; /* Standard font size for inputs */
+  }
+  
+  input::placeholder,
+  textarea::placeholder {
+    color: #aaa; /* Grey color for placeholder text */
+  }
+  
+  .submit-button {
+    padding: 15px 30px; /* Padding for the button */
+    font-size: 1.1rem; /* Slightly larger font size for the button text */
+    color: #fff; /* White text for the button */
+    background-color: #e3000f; /* Red background for the button */
+    border: none;
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .submit-button:hover {
+    background-color: #db4d4d; /* Darker red on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 40px 20px; /* Adjusted padding for mobile */
+    }
+  
+    input,
+    textarea {
+      padding: 10px; /* Reduced padding for mobile */
+    }
+  }
+  
