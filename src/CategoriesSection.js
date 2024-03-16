@@ -56,7 +56,7 @@ const categories = [
 
 const CategoriesSection = () => (
   <section className="categories-section">
-    <h1>We Cover All Them ALL!</h1>
+    <h1 id='h1'>Discover Uniforms for Every Profession <h2>Explore our wide range of uniform categories</h2> </h1>
     <div className="categories-container">
       {categories.map((category, index) => (
         <CategoryCard key={index} {...category} />
