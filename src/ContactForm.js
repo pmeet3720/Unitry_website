@@ -11,7 +11,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="contact-form-section">
+    <section id="Contact Us" className="contact-form-section">
       <div className="container">
         <h2>Contact Us</h2>
         <form onSubmit={handleSubmit}>
