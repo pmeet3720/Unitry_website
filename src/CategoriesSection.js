@@ -10,7 +10,6 @@ import sportsUniform from './images/sports.png'
 import fireFighterUniform from './images/FireFighter.png'
 import chefUniform from "./images/Chef.png"
 
-
 // Array of categories with placeholder data
 const categories = [
   { 
@@ -56,7 +55,7 @@ const categories = [
 ];
 
 const CategoriesSection = () => (
-  <section id="Our Solution" className="categories-section">
+  <section className="categories-section">
     <h1 id='h1'>Discover Uniforms for Every Profession <h2>Explore our wide range of uniform categories</h2> </h1>
     <div className="categories-container">
       {categories.map((category, index) => (

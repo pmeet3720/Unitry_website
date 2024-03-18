@@ -1,18 +1,15 @@
 import React from 'react';
-import { Link } from 'react-scroll';
+import {Link} from 'react-scroll';
 import './Header.css';
 import logo from './UNITRY.png';
 
 const Header = () => (
   <header className="header">
     <div className="logo">
-      {/* Using react-scroll to scroll to the top of the page */}
-      <Link to="hero" spy={true} smooth={true} duration={500}>
-        <img src={logo} alt="Company Logo" />
-      </Link>
+      <img src={logo} alt="Company Logo" />
     </div>
     <nav className="nav-center">
-      <Link
+    <Link
         activeClass="active"
         to="about-us"
         spy={true}
@@ -22,41 +19,10 @@ const Header = () => (
         className="nav-item"
       >
         About Us
-      </Link>
-      <Link
-        activeClass="active"
-        to="our-solution"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-        className="nav-item"
-      >
-        Our Solution
-      </Link>
-      {/* Uncomment and update this section as needed */}
-      {/* <Link
-        activeClass="active"
-        to="testimonials"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-        className="nav-item"
-      >
-        Testimonials
-      </Link> */}
-      <Link
-        activeClass="active"
-        to="contact-us"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-        className="nav-item"
-      >
-        Contact Us
-      </Link>
+      </Link>      
+      <a href="/our-solution" className="nav-item">Our Solution</a>
+      <a href="/testimonials" className="nav-item">Testimonials</a>
+      <a href="/contact-us" className="nav-item">Contact Us</a>
     </nav>
     <div className="nav-right">
       <button className="button sign-in">Sign In</button>
