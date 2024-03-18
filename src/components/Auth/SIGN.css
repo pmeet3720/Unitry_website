@@ -1,0 +1,85 @@
+/* SIGN.css */
+.auth-form-section {
+    background-color: #fafafa; /* Neutral background for consistency */
+    padding: 60px 15px; /* Ample padding */
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 50px; /* More suitable width for auth forms */
+    margin: 20px auto; /* Centered with more margin */
+    padding: 40px; /* Comfortable padding */
+    background-color: #fff; /* Clean white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Soft rounded corners */
+  }
+  
+  .auth-form-section h2 {
+    color: #333; /* Deep, readable text */
+    margin-bottom: 20px; /* Adequate spacing */
+    font-size: 2rem; /* Bold and clear heading */
+  }
+  
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    padding: 12px; /* Comfortable typing space */
+    margin-bottom: 15px; /* Spaced out fields */
+    border: 2px solid #e3e3e3; /* Soft border */
+    border-radius: 4px; /* Gentle rounded edges */
+    font-size: 1rem; /* Readable text */
+  }
+  
+  input::placeholder {
+    color: #9e9e9e; /* Placeholder text color */
+  }
+  
+  .auth-button, .social-login-button {
+    padding: 10px 20px; /* Adequate padding */
+    font-size: 1rem; /* Consistent font size */
+    color: #fff; /* Contrast text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Consistent rounded edges */
+    cursor: pointer;
+    margin-bottom: 10px; /* Space between buttons */
+    transition: opacity 0.3s ease; /* Smooth fade */
+  }
+  
+  .auth-button {
+    background-color: #007bff; /* Primary button color */
+  }
+  
+  .auth-button:hover {
+    opacity: 0.8; /* Hover effect */
+  }
+  
+  /* Social Login Buttons */
+  .social-login-button.google {
+    background-color: #db4437; /* Google color */
+  }
+  
+  .social-login-button.facebook {
+    background-color: #4267B2; /* Facebook color */
+  }
+  
+  .social-login-button.apple {
+    background-color: #000; /* Apple color */
+  }
+  
+  .social-login-button:hover {
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 40px 20px; /* Adjusted padding for smaller screens */
+    }
+  
+    input, .auth-button, .social-login-button {
+      padding: 10px; /* Smaller padding for inputs and buttons */
+    }
+  }
+  
