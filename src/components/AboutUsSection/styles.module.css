@@ -1,5 +1,5 @@
 /* AboutUsSection.css */
-.about-us-section {
+.about_section {
   background-color: #fafafa; /* Light gray background for the section */
   padding: 60px 15px;
   padding-top: 5px;
@@ -9,6 +9,7 @@
 }
 
 .container {
+  width: 100%;
   max-width: 1000px;
   margin: 5px auto;
   padding: 30px;
@@ -17,20 +18,20 @@
   border-radius: 15px;
 }
 
-.about-us-section h2 {
+.about_section h2 {
   color: #333; /* Black color for the heading */
   margin-bottom: 30px;
   font-size: 3rem;
 }
 
-.about-us-section p {
+.about_section p {
   font-size: 1.25rem;
   line-height: 2;
   margin-bottom: 25px;
 }
 
 /* Additional styles for the button */
-.cta-button-ABUS {
+.cta_button_ABUS {
   padding: 10px 30px;
   font-size: 1.1rem;
   color: #fff;
@@ -41,7 +42,7 @@
   transition: background-color 0.3s ease;
 }
 
-.cta-button-ABUS:hover {
+.cta_button_ABUS:hover {
   background-color: #db4d4d; /* Slightly darker red on hover */
 }
 
