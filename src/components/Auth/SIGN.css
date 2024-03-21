@@ -5,9 +5,10 @@
     text-align: center;
   }
   
-  .container {
-    max-width: 50px; /* More suitable width for auth forms */
-    margin: 20px auto; /* Centered with more margin */
+  .auth-container {
+    max-height: 100%;
+    max-width: 500px; /* More suitable width for auth forms */
+    margin: 10% auto; /* Centered with more margin */
     padding: 40px; /* Comfortable padding */
     background-color: #fff; /* Clean white background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -49,7 +50,7 @@
   }
   
   .auth-button {
-    background-color: #007bff; /* Primary button color */
+    background-color: #cf1b1b; /* Primary button color */
   }
   
   .auth-button:hover {
