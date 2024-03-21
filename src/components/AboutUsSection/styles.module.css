@@ -13,11 +13,10 @@
   max-width: 1000px;
   margin: 5px auto;
   padding: 30px;
-  background-color: #fff; /* White background for the container */
-  box-shadow: 0 6px 12px rgba(227, 0, 15, 0.2); /* Red shadow with some transparency */
+  background-color: #fff; 
+  box-shadow: 0 6px 12px rgba(227, 0, 15, 0.2); 
   border-radius: 15px;
 }
-
 .about_section h2 {
   color: #333; /* Black color for the heading */
   margin-bottom: 30px;

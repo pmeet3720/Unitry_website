@@ -1,24 +1,25 @@
-/* ContactForm.css */
-.contact-form-section {
-  background-color: #fafafa; /* Neutral background */
-  padding: 60px 15px; /* More padding at the top and bottom */
+/* Updated class names to match the new React component structure */
+
+.contact-section {
+  background-color: #fafafa;
+  padding: 60px 15px;
   text-align: center;
 }
 
-.container {
-  max-width: 500px !important;  /* Changed from width to max-width and set to 500px with !important */
-  width: 100%; /* Ensure it takes up 100% of the parent width up to 500px */
-  margin: 0 auto; /* Center the container */
-  padding: 40px; /* Increase padding for a taller form */
-  background-color: #fff; /* White background for the container */
-  box-shadow: 0 6px 12px rgba(227, 0, 15, 0.2); /* Red shadow for consistency */
-  border-radius: 15px; /* Rounded corners */
+.contact-wrapper {
+  max-width: 500px !important;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 6px 12px rgba(227, 0, 15, 0.2);
+  border-radius: 15px;
 }
 
-.contact-form-section h2 {
-  color: #333; /* Black text for heading */
-  margin-bottom: 30px; /* More space below the heading */
-  font-size: 2.5rem; /* Large font size for heading */
+.contact-section h2 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
 }
 
 form {
@@ -28,40 +29,40 @@ form {
 
 input,
 textarea {
-  padding: 15px; /* Comfortable padding inside the fields */
-  margin-bottom: 20px; /* Space between fields */
-  border: 1px solid #ddd; /* Light grey border for inputs */
-  border-radius: 5px; /* Slightly rounded corners for the inputs */
-  font-size: 1rem; /* Standard font size for inputs */
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: #aaa; /* Grey color for placeholder text */
+  color: #aaa;
 }
 
-.submit-button {
-  padding: 15px 30px; /* Padding for the button */
-  font-size: 1.1rem; /* Slightly larger font size for the button text */
-  color: #fff; /* White text for the button */
-  background-color: #e3000f; /* Red background for the button */
+.send-btn {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #e3000f;
   border: none;
-  border-radius: 5px; /* Rounded corners for the button */
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  transition: background-color 0.3s ease;
 }
 
-.submit-button:hover {
-  background-color: #db4d4d; /* Darker red on hover */
+.send-btn:hover {
+  background-color: #db4d4d;
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 40px 20px; /* Adjusted padding for mobile */
+  .contact-wrapper {
+    padding: 40px 20px;
   }
 
   input,
   textarea {
-    padding: 10px; /* Reduced padding for mobile */
+    padding: 10px;
   }
 }
