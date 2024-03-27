@@ -1,0 +1,49 @@
+.site-footer {
+    background-color: #fafafa; /* Light background color */
+    color: #333; /* Dark text color for contrast */
+    padding: 40px 0;
+    font-size: 1rem;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 20px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li a {
+    color: #333; /* Dark text color for links for better visibility */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #e3000f; /* Red color for hover effect */
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #ffdddd; /* Very faint red line */
+    padding-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-section {
+      margin-bottom: 20px;
+    }
+  }
+  

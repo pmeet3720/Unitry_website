@@ -1,0 +1,62 @@
+.testimonials-section {
+  background-color: #fff;
+  padding: 40px;
+  text-align: center;
+}
+
+.testimonial-card {
+  min-width: 30%; 
+  margin: 0 15px;
+  background-color: #fafafa;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(227, 0, 15, 0.1);
+  border-radius: 8px;
+  margin: 0 20px;
+}
+
+.rating .star-filled {
+  color: #e3000f; /* Primary red color */
+}
+
+.rating .star-empty {
+  color: #ccc; /* Light gray for empty stars */
+}
+
+.testimonial-text {
+  color: #333;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.author {
+  color: #666;
+  font-size: 14px;
+}
+
+.nav-icon {
+  cursor: pointer;
+  padding: 30px;
+  color: #e3000f; /* Primary red color */
+  font-size: 24px;
+  z-index: 1;
+}
+.nav-icon.left {
+  position: absolute;
+  left: 0;
+}
+
+.nav-icon.right {
+  position: absolute;
+  right: 0;
+}
+
+.testimonials-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Align items to the start to handle overflow */
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.5s ease; /* Smooth the transitioning effect */
+}
+
+/* Add responsive adjustments as needed */

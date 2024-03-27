@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 
-// Import components
 import Header from './components/Header/Header';
 import HeroSection from './components/HeroSection/HeroSection';
 import AboutUsSection from './components/AboutUsSection/AboutUsSection';
@@ -10,8 +9,10 @@ import CategoriesSection from './components/CategoriesSection/CategoriesSection'
 import ContactForm from './components/ContactForm/ContactForm';
 import SignIn from './components/Auth/SignIn';
 import SignUp from './components/Auth/SignUp';
+import Footer from './components/Footer/Footer'; 
+import Testimonials from './components/Testimonial/Testimonials';
 
-// ScrollToTop component
+
 const ScrollToTop = () => {
   const { hash } = useLocation();
 
@@ -45,12 +46,13 @@ function App() {
               <div id="about-us-section"><AboutUsSection /></div>
               <div id="categories-section"><CategoriesSection /></div>
               <div id="contact-form-section"><ContactForm /></div>
-              {/* You can add your Footer component here as well */}
             </>
           } />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
+        <Testimonials />
+        <Footer /> 
       </div>
     </Router>
   );
