@@ -1,52 +1,47 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import { useEffect, useState } from "react";
-import { useContext, createContext } from "react";
-import { auth } from "../firebase/firebaseConfig";
+import { createContext, useContext, useState, useEffect } from 'react';
+import { auth } from '../firebase/firebaseConfig';
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
-} from "firebase/auth";
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  signInWithPopup,
+} from 'firebase/auth';
 
 const AuthContext = createContext();
 
-export function userAuth() {
+export function useAuth() {
   return useContext(AuthContext);
 }
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const signup = async (email, password) => {
-    setLoading(true);
-    try {
-      const { user } = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      console.log(user);
-      setCurrentUser(user);
-    } catch (error) {
-      console.log(error);
-    }
-    setLoading(false);
+    return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const signin = async (email, password) => {
-    setLoading(true);
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-    } catch (error) {
-      console.log(error);
-    }
-    setLoading(false);
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   const signout = () => {
     return signOut(auth);
+  };
+
+  // Google authentication
+  const signInWithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(auth, provider);
+  };
+
+  // Facebook authentication
+  const signInWithFacebook = async () => {
+    const provider = new FacebookAuthProvider();
+    return signInWithPopup(auth, provider);
   };
 
   useEffect(() => {
@@ -54,9 +49,7 @@ export function AuthProvider({ children }) {
       setCurrentUser(user);
       setLoading(false);
     });
-    return () => {
-      unsubscribe();
-    };
+    return unsubscribe; // Make sure to clean up the subscription
   }, []);
 
   const value = {
@@ -64,6 +57,8 @@ export function AuthProvider({ children }) {
     signin,
     signup,
     signout,
+    signInWithGoogle,
+    signInWithFacebook,
   };
 
   return (

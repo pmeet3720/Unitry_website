@@ -73,6 +73,22 @@
   .social-login-button:hover {
     opacity: 0.8;
   }
+  /* Adjustments for Social Login Buttons */
+.social-login-button {
+  display: block; /* Ensure buttons take full width */
+  text-align: center; /* Center button text */
+  color: #fff; /* White text for visibility */
+  margin: 10px 0; /* Space between buttons */
+}
+
+.social-login-button.google {
+  background-color: #DB4437; /* Google button color */
+}
+
+.social-login-button.facebook {
+  background-color: #4267B2; /* Facebook button color */
+}
+
   
   @media (max-width: 768px) {
     .container {

@@ -1,24 +1,39 @@
 // SignUp.js
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import auth from '../../firebase/firebaseConfig';// Ensure this is the correct path
-import './SIGN.css';
-import { userAuth } from '../../context/AuthContext';
+import "./AuthForm.css"; // Using the updated CSS file name
+import { useAuth } from '../../context/AuthContext';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const { signup, currentUser } = userAuth();
-
+  const { signup, currentUser, signInWithGoogle, signInWithFacebook } = useAuth();
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      await signup(email,password)
+      await signup(email, password);
       navigate('/'); // Navigate to homepage after sign-up
     } catch (error) {
       alert(error.message); // Handle errors
+    }
+  };
+
+  const handleGoogleSignUp = async () => {
+    try {
+      await signInWithGoogle();
+      navigate("/");
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  const handleFacebookSignUp = async () => {
+    try {
+      await signInWithFacebook();
+      navigate("/");
+    } catch (error) {
+      alert(error.message);
     }
   };
 
@@ -34,7 +49,9 @@ const SignUp = () => {
         <h2>Sign Up</h2>
         <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
         <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} required />
-        <button type="submit">Sign Up</button>
+        <button className="auth-button" type="submit">Sign Up</button>
+        <button type="button" onClick={handleGoogleSignUp} className="social-login-button google">Sign up with Google</button>
+        <button type="button" onClick={handleFacebookSignUp} className="social-login-button facebook">Sign up with Facebook</button>
       </form>
     </div>
   );

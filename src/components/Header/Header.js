@@ -4,9 +4,9 @@ import { Link as ScrollLink } from "react-scroll";
 import "./Header.css";
 import logo from "./UNITRY.png";
 import ConditionalLink from "./ConditionalLink"; // Adjust the path as necessary
-import { userAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 const Header = () => {
-  const { signout, currentUser } = userAuth();
+  const { signout, currentUser } = useAuth();
 
   return (
     <header className="header">
