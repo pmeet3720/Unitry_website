@@ -1,10 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
-import './Header.css';
-import logo from './UNITRY.png';
-import ConditionalLink from './ConditionalLink'; // Adjust the path as necessary
+import React from "react";
+import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
+import "./Header.css";
+import logo from "./UNITRY.png";
+import ConditionalLink from "./ConditionalLink"; // Adjust the path as necessary
+import { userAuth } from "../../context/AuthContext";
 const Header = () => {
+  const { signout, currentUser } = userAuth();
+
   return (
     <header className="header">
       <div className="logo">
@@ -13,13 +16,53 @@ const Header = () => {
         </ScrollLink>
       </div>
       <nav className="nav-center">
-        <ConditionalLink to="about-us-section" spy={true} smooth={true} offset={-70} duration={500} className="nav-item" route="/#about-us-section">About Us</ConditionalLink>
-        <ConditionalLink to="categories-section" spy={true} smooth={true} offset={-70} duration={500} className="nav-item" route="/#categories-section">Our Solution</ConditionalLink>
-        <ConditionalLink to="contact-form-section" spy={true} smooth={true} offset={-70} duration={500} className="nav-item" route="/#contact-form-section">Contact Us</ConditionalLink>
+        <ConditionalLink
+          to="about-us-section"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="nav-item"
+          route="/#about-us-section"
+        >
+          About Us
+        </ConditionalLink>
+        <ConditionalLink
+          to="categories-section"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="nav-item"
+          route="/#categories-section"
+        >
+          Our Solution
+        </ConditionalLink>
+        <ConditionalLink
+          to="contact-form-section"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="nav-item"
+          route="/#contact-form-section"
+        >
+          Contact Us
+        </ConditionalLink>
       </nav>
       <div className="nav-right">
-        <Link to="/signin" className="button sign-in">Sign In</Link>
-        <Link to="/signup" className="button sign-up">Sign Up</Link>
+        {currentUser ? (
+          <button onClick={() => signout()}>Log Out</button>
+        ) : (
+          <>
+            <Link to="/signin" className="button sign-in">
+              Sign In
+            </Link>
+            <Link to="/signup" className="button sign-up">
+              Sign Up
+            </Link>
+          </>
+        )}
       </div>
     </header>
   );
