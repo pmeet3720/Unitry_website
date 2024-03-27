@@ -16,6 +16,7 @@ const Header = () => {
         <ConditionalLink to="about-us-section" spy={true} smooth={true} offset={-70} duration={500} className="nav-item" route="/#about-us-section">About Us</ConditionalLink>
         <ConditionalLink to="categories-section" spy={true} smooth={true} offset={-70} duration={500} className="nav-item" route="/#categories-section">Our Solution</ConditionalLink>
         <ConditionalLink to="contact-form-section" spy={true} smooth={true} offset={-70} duration={500} className="nav-item" route="/#contact-form-section">Contact Us</ConditionalLink>
+        <ConditionalLink to="testimonials-section" spy={true} smooth={true} offset={-70} duration={500} className="nav-item" route="/#testimonials-section">Reviews</ConditionalLink>
       </nav>
       <div className="nav-right">
         <Link to="/signin" className="button sign-in">Sign In</Link>

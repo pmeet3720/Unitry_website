@@ -1,12 +1,23 @@
-// Import React and potential icon libraries for navigation
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight, FaStar, FaRegStar } from 'react-icons/fa';
-import './testimonials.css'; // Ensure this is the correct path
+import './testimonials.css';
+
+const testimonials = [
+  { rating: 5, text: "Sarvice ne uniform nu quality ekdum first class chhe. Customer service pan kadak. Dariye recommend karish.", author: "Parth Desai" },
+  { rating: 4, text: "Delivery time mamtavari ane quality upar no prashna j nathi. Mari custom requirements mate perfect hatu.", author: "Aarohi Patel" },
+  { rating: 5, text: "Ameari team ne navu uniform pehri ne ekdum jhakas lage chhe. Details par dhyan apvama aavu quality rare chhe.", author: "Nirav Mehta" },
+  { rating: 4, text: "Sachi muje kai kehvani jarur nathi, kaam joi ne j todi gayo. Fantastic service!", author: "Rajvi Shah" },
+  { rating: 5, text: "Bau j saras! Khubaj sundar ane comfortable uniforms banavya chhe.", author: "Chetan Bhai" },
+  { rating: 3, text: "Service toh saras chhe, pan thodi vadhu improvement joyiye. Overall, sara chhe.", author: "Vishal Vyas" },
+  { rating: 5, text: "Aeni professionalism and dedication kamalni chhe. Hamesha mate amara supplier banigaya.", author: "Meera Joshi" },
+  { rating: 4, text: "Product no design ane material bahu badhiya chhe, par delivery ma thodu delay thai gayu.", author: "Soham Desai" },
+  { rating: 5, text: "Fantastic! Bija koi service sathe compare j nahi kari shakay. Uniforms superb chhe.", author: "Ishaan Sutaria" },
+];
+
 
 const TestimonialCard = ({ rating, text, author }) => {
-  // Generate stars based on rating
   const stars = Array.from({ length: 5 }, (_, index) => (
-    index < rating ? <FaStar className="star filled" /> : <FaRegStar className="star" />
+    index < rating ? <FaStar className="star filled" key={index} /> : <FaRegStar className="star" key={index} />
   ));
 
   return (
@@ -18,57 +29,47 @@ const TestimonialCard = ({ rating, text, author }) => {
   );
 };
 
-const testimonials = [
-  {
-    rating: 5,
-    text: "The uniforms are of excellent quality, and the customer service is unmatched. I highly recommend their services.",
-    author: "Alex Johnson",
-  },
-  {
-    rating: 4,
-    text: "Quick delivery and top-notch quality. The customization options were exactly what we needed.",
-    author: "Maria Smith",
-  },
-  {
-    rating: 5,
-    text: "Our team looks outstanding in their new uniforms. The attention to detail is impressive.",
-    author: "Chris Wayne",
-  },
-  // Add 6 more reviews
-  { rating: 4, text: "Review text 4", author: "Author 4" },
-  { rating: 5, text: "Khub saras", author: "Chetan Bhai" },
-  { rating: 3, text: "Review text 6", author: "Author 6" },
-  { rating: 5, text: "Review text 7", author: "Author 7" },
-  { rating: 4, text: "Review text 8", author: "Author 8" },
-  { rating: 5, text: "Review text 9", author: "Author 9" },
-];
-
 const Testimonials = () => {
   const [visibleStartIndex, setVisibleStartIndex] = useState(0);
-
-  // Update the position based on visibleStartIndex
-  const getPosition = () => {
-    // Assuming each card + margin is approx 350px wide
-    return -(visibleStartIndex * 350) + 'px';
-  };
 
   const nextTestimonials = () => {
     setVisibleStartIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
   };
 
   const prevTestimonials = () => {
-    setVisibleStartIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
+    setVisibleStartIndex((prevIndex) => {
+      if (prevIndex === 0) {
+        return testimonials.length - 1;
+      } else {
+        return prevIndex - 1;
+      }
+    });
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextTestimonials();
+    }, 3000); // Adjust time as needed for slower or faster transitions
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, []);
 
   return (
     <div className="testimonials-section">
       <h2>What Our Customers Say</h2>
-      <div className="testimonials-container" style={{ transform: `translateX(${getPosition()})`, transition: 'transform 0.5s ease' }}>
-        <FaChevronLeft className="nav-icon" onClick={prevTestimonials} />
+      <div className="testimonials-container">
+        <FaChevronLeft className="nav-icon left" onClick={prevTestimonials} />
         {testimonials.map((testimonial, index) => (
-          <TestimonialCard key={index} {...testimonial} />
+          <div
+            className={`testimonial-card ${
+              index === visibleStartIndex ? 'active' : ''
+            }`}
+            key={index}
+            style={{ transform: `translateX(-${visibleStartIndex * 100}%)` }}
+          >
+            <TestimonialCard {...testimonial} />
+          </div>
         ))}
-        <FaChevronRight className="nav-icon" onClick={nextTestimonials} />
+        <FaChevronRight className="nav-icon right" onClick={nextTestimonials} />
       </div>
     </div>
   );

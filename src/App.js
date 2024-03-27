@@ -45,14 +45,14 @@ function App() {
               <div id="hero-section"><HeroSection /></div>
               <div id="about-us-section"><AboutUsSection /></div>
               <div id="categories-section"><CategoriesSection /></div>
+              <div id="testimonials-section"><Testimonials /></div>
               <div id="contact-form-section"><ContactForm /></div>
             </>
           } />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
-        <Testimonials />
-        <Footer /> 
+        <Footer/> 
       </div>
     </Router>
   );

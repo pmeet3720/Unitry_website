@@ -1,62 +1,95 @@
 .testimonials-section {
-  background-color: #fff;
-  padding: 40px;
+  background-color: #f8f8f8; /* Soft grey background */
+  padding: 40px 0; /* Top and bottom padding only */
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%; /* Full width */
+  margin-top: 10px;;
+  margin: 0 auto; /* No margin for no separation */
 }
 
 .testimonial-card {
-  min-width: 30%; 
-  margin: 0 15px;
-  background-color: #fafafa;
+  flex: 0 0 calc(33.333% - 40px); /* Adjust the percentage to fit 3 cards */
+  margin: 20px; /* Space between cards */
+  background-color: #ffffff; /* White background for the card */
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(227, 0, 15, 0.1);
+  border: 1px solid #333; /* Black border */
   border-radius: 8px;
-  margin: 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-.rating .star-filled {
-  color: #e3000f; /* Primary red color */
+.testimonial-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover for an interactive effect */
 }
 
-.rating .star-empty {
-  color: #ccc; /* Light gray for empty stars */
+.stars .filled {
+  color: #e3a00f; /* Keeping star colors consistent */
+}
+
+.star {
+  margin: 0 2px;
 }
 
 .testimonial-text {
-  color: #333;
+  color: #444; /* Darker text for better readability */
   font-size: 16px;
   margin: 10px 0;
 }
 
-.author {
-  color: #666;
+.testimonial-author {
+  color: #777; /* Subdued text color for author names */
   font-size: 14px;
-}
-
-.nav-icon {
-  cursor: pointer;
-  padding: 30px;
-  color: #e3000f; /* Primary red color */
-  font-size: 24px;
-  z-index: 1;
-}
-.nav-icon.left {
-  position: absolute;
-  left: 0;
-}
-
-.nav-icon.right {
-  position: absolute;
-  right: 0;
+  margin-bottom: 10px; /* Added space under author name */
 }
 
 .testimonials-container {
   display: flex;
-  align-items: center;
-  justify-content: center; /* Align items to the start to handle overflow */
-  overflow: hidden;
-  position: relative;
-  transition: transform 0.5s ease; /* Smooth the transitioning effect */
+  align-items: center; /* Vertically align cards */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  scroll-behavior: smooth;
 }
 
-/* Add responsive adjustments as needed */
+.nav-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  z-index: 2;
+  color: #bbb; /* Subtle color for the icons */
+  background-color: transparent; /* Removed the background for a cleaner look */
+  border-radius: 50%;
+  padding: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-icon:hover {
+  color: #333; /* Darker color on hover for interactivity */
+}
+
+.nav-icon.left {
+  left: 20px; /* Adjusted for spacing */
+}
+
+.nav-icon.right {
+  right: 20px; /* Adjusted for spacing */
+}
+
+@media (max-width: 1024px) {
+  .testimonial-card {
+    flex: 0 0 calc(50% - 40px); /* Two cards per view on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-icon {
+    display: none; /* Hide icons on very small screens, use swipe instead */
+  }
+
+  .testimonial-card {
+    flex: 0 0 calc(100% - 40px); /* One card at a time on very small screens */
+    margin: 20px; /* Keep margins consistent */
+  }
+}
