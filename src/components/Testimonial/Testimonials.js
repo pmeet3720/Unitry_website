@@ -3,7 +3,7 @@ import { FaChevronLeft, FaChevronRight, FaStar, FaRegStar } from 'react-icons/fa
 import './testimonials.css';
 
 const testimonials = [
-  { rating: 5, text: "Sarvice ne uniform nu quality ekdum first class chhe. Customer service pan kadak. Dariye recommend karish.", author: "Parth Desai" },
+  { rating: 5, text: "service ne uniform nu quality ekdum first class chhe. Customer service pan kadak. Dariye recommend karish.", author: "Parth Desai" },
   { rating: 4, text: "Delivery time mamtavari ane quality upar no prashna j nathi. Mari custom requirements mate perfect hatu.", author: "Aarohi Patel" },
   { rating: 5, text: "Ameari team ne navu uniform pehri ne ekdum jhakas lage chhe. Details par dhyan apvama aavu quality rare chhe.", author: "Nirav Mehta" },
   { rating: 4, text: "Sachi muje kai kehvani jarur nathi, kaam joi ne j todi gayo. Fantastic service!", author: "Rajvi Shah" },
