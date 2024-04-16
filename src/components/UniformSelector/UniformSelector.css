@@ -1,0 +1,109 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) inset;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: blue;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.uniform-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.category-card {
+    width: calc(33.333% - 20px);
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-image {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .category-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .category-card {
+        width: 100%;
+    }
+}
+
+
+/* UniformSelector.css */
+.select-dropdown {
+    color: black; /* Change this to a visible color */
+    background-color: white; /* Ensure background contrast */
+}
+
+/* Apply styles to your dropdown */
+select {
+    -webkit-appearance: none; /* Removes default styling on WebKit browsers */
+    -moz-appearance: none; /* Removes default styling for Firefox */
+    appearance: none; /* Removes default styling */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white url('./image.png') no-repeat right 10px center; /* Use a custom down arrow icon */
+    background-size: 12px; /* Adjust size as needed */
+}

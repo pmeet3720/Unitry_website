@@ -18,6 +18,9 @@ import { AuthProvider } from "./context/AuthContext";
 import Footer from './components/Footer/Footer'; 
 import Testimonials from './components/Testimonial/Testimonials';
 
+import UniformSelector from './components/UniformSelector/UniformSelector';
+import GendersAndProductCategories from './components/GendersAndProductCategories/GendersAndProductCategories';
+import CategoryItemsDisplay from './components/CategoryItemsDisplay/CategoryItemsDisplay';
 
 const ScrollToTop = () => {
   const { hash } = useLocation();
@@ -41,9 +44,9 @@ const ScrollToTop = () => {
 
 function App() {
   return (
-    <AuthProvider> {/* Include AuthProvider from the `main` branch */}
+    <AuthProvider>
       <Router>
-        <ScrollToTop /> {/* This component manages scrolling to sections based on the URL hash */}
+        <ScrollToTop />
         <div className="App">
           <Header />
           <Routes>
@@ -58,8 +61,11 @@ function App() {
             } />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/uniforms" element={<UniformSelector />} />
+            <Route path="/genders-and-product-categories/:state/:district/:school" element={<GendersAndProductCategories />} />
+            <Route path="/category-items-display/:state/:district/:school/:categoryType" element={<CategoryItemsDisplay />} />
           </Routes>
-          <Footer/> {/* Footer remains outside the Routes to persist across different pages */}
+          <Footer />
         </div>
       </Router>
     </AuthProvider>
